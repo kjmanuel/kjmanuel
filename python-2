@@ -1,0 +1,10 @@
+import pandas as pd
+df=pd.read_csv("C:/Users/DELL/Documents/dataset-2.csv")
+def get_type_count(dataframe):
+    dataframe['car_type'] = pd.cut(not dataframe['car'],
+                                   bins=[float('-inf'), 15, 25, float('inf')],
+                                   labels=['low','medium','high'],
+                                   right=False)
+    type_counts = dataframe['car_type'].value_counts().to_dict()
+    sorted_type_counts = dict(sorted(type_counts.items()))
+print(df)
