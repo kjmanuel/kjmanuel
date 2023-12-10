@@ -1,0 +1,6 @@
+import numpy as np
+import pandas as pd
+df=pd.read_csv('C:/Users/DELL/Documents/dataset-1.csv')
+df_matrix=df.pivot(index='id_1',columns='id_2',values='car')
+df_matrix=df_matrix.fillna(0)
+print(df_matrix)
